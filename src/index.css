@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* @custom-variant dark (&:is(.dark *)); */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+/* @custom-variant dark (&:is(.dark *)); */
+
+:root {
+  --radius: 1rem;
+  --background: hsl(0 0% 5%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(262 52% 10%);
+  --card-foreground: hsl(0 0% 100%);
+  --popover: hsl(262 52% 8%);
+  --popover-foreground: hsl(210 40% 98%);
+  --primary: hsl(261 60% 48%);
+  --primary-foreground: hsl(210 40% 98%);
+  --secondary: hsl(183 100% 50%);
+  --secondary-foreground: hsl(222.2 47.4% 11.2%);
+  --muted: hsl(262 46% 15%);
+  --muted-foreground: hsl(215 20.2% 65.1%);
+  --accent: hsl(261 46% 25%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(262 46% 15%);
+  --input: hsl(262 46% 15%);
+  --ring: hsl(261 60% 48%);
+  --sidebar-background: hsl(262 52% 10%);
+  --sidebar-foreground: hsl(210 40% 98%);
+  --sidebar-primary: hsl(261 60% 48%);
+  --sidebar-primary-foreground: hsl(210 40% 98%);
+  --sidebar-accent: hsl(262 46% 15%);
+  --sidebar-accent-foreground: hsl(210 40% 98%);
+  --sidebar-border: hsl(262 46% 15%);
+  --sidebar-ring: hsl(183 100% 50%);
+}
+
+.dark {
+  --background: hsl(224 71% 4%);
+  --foreground: hsl(213 31% 91%);
+  --card: hsl(224 71% 4%);
+  --card-foreground: hsl(213 31% 91%);
+  --popover: hsl(224 71% 4%);
+  --popover-foreground: hsl(215 28% 97%);
+  --primary: hsl(210 20% 98%);
+  --primary-foreground: hsl(220.9 39.3% 11%);
+  --secondary: hsl(215.4 33% 17.3%);
+  --secondary-foreground: hsl(210 20% 98%);
+  --muted: hsl(215.4 33% 17.3%);
+  --muted-foreground: hsl(217.9 32.6% 49.8%);
+  --accent: hsl(215.4 33% 17.3%);
+  --accent-foreground: hsl(210 20% 98%);
+  --destructive: hsl(0 100% 50%);
+  --destructive-foreground: hsl(210 20% 98%);
+  --border: hsl(216.2 27.9% 16.9%);
+  --input: hsl(216.2 27.9% 16.9%);
+  --ring: hsl(216.2 27.9% 16.9%);
+  --sidebar-background: hsl(224 71% 4%);
+  --sidebar-foreground: hsl(213 31% 91%);
+  --sidebar-primary: hsl(210 20% 98%);
+  --sidebar-primary-foreground: hsl(220.9 39.3% 11%);
+  --sidebar-accent: hsl(215.4 33% 17.3%);
+  --sidebar-accent-foreground: hsl(210 20% 98%);
+  --sidebar-border: hsl(216.2 27.9% 16.9%);
+  --sidebar-ring: hsl(215.4 33% 17.3%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-light;
+    letter-spacing: -0.01em;
+    background-color: #0d0d0d;
+    background-image: radial-gradient(
+        circle at 50% 50%,
+        rgba(138, 43, 226, 0.15) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(138, 43, 226, 0.1) 0%,
+        transparent 60%
+      );
+    background-attachment: fixed;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-light tracking-tighter;
+  }
+
+  p {
+    @apply text-foreground/80 leading-relaxed;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/30 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg;
+    box-shadow: 0 8px 32px rgba(138, 43, 226, 0.08);
+  }
+  .neumorphic-button {
+    @apply relative bg-primary rounded-lg text-white px-8 py-3 font-normal tracking-wide transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3),
+      inset 0 1px 1px rgba(255, 255, 255, 0.2),
+      inset 0 -2px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .neumorphic-button:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3),
+      inset 0 1px 1px rgba(255, 255, 255, 0.3),
+      inset 0 -2px 2px rgba(0, 0, 0, 0.2), 0 0 15px 2px rgba(142, 68, 173, 0.4);
+  }
+  .appear-on-scroll {
+    @apply opacity-0 translate-y-10 transition-all duration-700;
+  }
+
+  .appear-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .purple-glow {
+    box-shadow: 0 0 25px 5px rgba(138, 43, 226, 0.25);
+  }
+
+  .purple-glow-intense {
+    box-shadow: 0 0 35px 8px rgba(138, 43, 226, 0.35);
+  }
+
+  .purple-glow-subtle {
+    box-shadow: 0 0 15px 2px rgba(138, 43, 226, 0.15);
+  }
+
+  .timeline-item {
+    @apply relative pl-10 pb-12 border-l border-primary/30 last:border-l-0;
+  }
+  .timeline-dot {
+    @apply absolute -left-2.5 w-5 h-5 rounded-full bg-primary;
+    box-shadow: 0 0 10px 2px rgba(142, 68, 173, 0.4);
+  }
+  .timeline-content {
+    @apply mt-2 text-sm text-muted-foreground;
+  }
+}
